@@ -1,3 +1,26 @@
+# 解决病理图像文件大于4个G,openslide无法读取的问题，需要直接从github仓库里面拉去进行安装，下面会写清楚安装的步骤
+1、安装openslide
+    apt autoconf, automake, libtool, and pkg-config 
+    然后 run "autoreconf -i"
+    之后会生成一些有关的文件然后直接执行
+    ./configure 可能报错openjpeg包没有安装 github去拉去这个包，然后编译安装
+    // 进入解压后的目录openjpeg-master，依次执行执行如下命令
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    sudo make install
+    sudo make clean
+    后面可能还会提示sqlite3没有安装，这时候需要 apt-get install libsqlite3-dev，之后在继续执行 ./configure
+    ./configure
+    sudo make
+    sudo make install
+    后面可能还会提示libopenslide没有安装，需要将编译好的文件放到对应的cond环境下面去
+    // 进入~/anaconda3/lib
+    cp /usr/local/lib/libopenslide.so.0 ./
+    cp /usr/local/lib/libopenslide.so ./
+**********************************************************上面就是安装的过程，相关的过程参考如下链接****************************************************
+https://blog.csdn.net/chongchong247619000/article/details/103930005
+
 OpenSlide
 
 Carnegie Mellon University and others
