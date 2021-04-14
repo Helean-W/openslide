@@ -4,7 +4,7 @@
     然后 run "autoreconf -i"
     之后会生成一些有关的文件然后直接执行
     ./configure 可能报错openjpeg包没有安装 github去拉去这个包，然后编译安装
-    // 进入解压后的目录openjpeg-master，依次执行执行如下命令
+    // 进入解压后的目录openjpeg-master，依次执行执行如下命令 git@github.com:uclouvain/openjpeg.git
     mkdir build
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release
